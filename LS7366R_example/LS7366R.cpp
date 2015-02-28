@@ -14,7 +14,9 @@ LS7366R::LS7366R(unsigned char _leftSelect, unsigned char _rightSelect, unsigned
 	rightSelect = _rightSelect;
 
 	pinMode(leftSelect, OUTPUT);
+	digitalWrite(leftSelect, HIGH);   // Set initial state to "not selected"
 	pinMode(rightSelect, OUTPUT);
+	digitalWrite(rightSelect, HIGH);  // Set initial state to "not selected"
 	SPI.begin();
 
 	digitalWrite(leftSelect, LOW);
